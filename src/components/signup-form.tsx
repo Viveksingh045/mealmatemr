@@ -56,7 +56,7 @@ const onSubmit = async (data: SignUpInput) => {
       toast.success("You are Successfully Registered",{
         description: response.data.message
       })
-      router.replace("/merchant/register/verification");
+      router.replace("/register/verification");
       setIsSubmitting(false)
     } catch (error) {
       console.error("error in signup",error);

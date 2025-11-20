@@ -27,7 +27,7 @@ export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
   const form = useForm<VerifyCodeInput>({
     resolver: zodResolver(VerifyCodeSchema),
     defaultValues: {
-      verifyCode: "",
+      securityCode: "",
     },
   });
 
@@ -70,7 +70,7 @@ export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
             {/* React Hook Form Controller */}
             <Controller
               control={form.control}
-              name="verifyCode"
+              name="securityCode"
               render={({ field }) => (
                 <InputOTP
                   maxLength={6}
@@ -102,9 +102,9 @@ export function OTPForm({ className, ...props }: React.ComponentProps<"div">) {
             />
 
             {/* Error Message */}
-            {form.formState.errors.verifyCode && (
+            {form.formState.errors.securityCode && (
               <p className="text-red-500 text-sm text-center">
-                {form.formState.errors.verifyCode.message}
+                {form.formState.errors.securityCode.message}
               </p>
             )}
 

@@ -32,7 +32,7 @@ z.object({
 export type SignUpInput = z.infer<typeof signUpSchema>;
 
 export const VerifyCodeSchema = z.object({
-  verifyCode: z.string()
+  securityCode: z.string()
 
 });
 
