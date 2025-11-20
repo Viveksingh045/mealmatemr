@@ -14,6 +14,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import Link from "next/link"   // <-- important import
 
 export function LoginForm({
   className,
@@ -28,9 +29,12 @@ export function LoginForm({
             Enter your email below to login to your account
           </CardDescription>
         </CardHeader>
+
         <CardContent>
           <form>
             <FieldGroup>
+
+              {/* Email Field */}
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
@@ -40,25 +44,43 @@ export function LoginForm({
                   required
                 />
               </Field>
+
+              {/* Password Field */}
               <Field>
                 <div className="flex items-center">
                   <FieldLabel htmlFor="password">Password</FieldLabel>
-                  
-                  <a
-                    href="#"
+
+                  <Link
+                    href="/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
                     Forgot your password?
-                  </a>
+                  </Link>
                 </div>
-                <Input id="password" type="password" placeholder="********" required />
+
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  required
+                />
               </Field>
+
+              {/* Login Button + Signup Link */}
               <Field>
                 <Button type="submit">Login</Button>
+
                 <FieldDescription className="text-center">
-                  Don&apos;t have an account? <a href="#">Sign up</a>
+                  Don&apos;t have an account?{" "}
+                  <Link
+                    href="/register"
+                    className="underline underline-offset-4 hover:text-primary"
+                  >
+                    Sign up
+                  </Link>
                 </FieldDescription>
               </Field>
+
             </FieldGroup>
           </form>
         </CardContent>
