@@ -45,8 +45,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
   return (
     <>
-    <SidebarProvider className="top-0">
-      <AppSidebar/>
+    {/* <SidebarProvider className="top-0">
+      <AppSidebar/> */}
       <main>
         <div id='logoutbutton' className="top-0 fixed right-0 p-3">
         <AlertDialog>
@@ -75,7 +75,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <Toaster richColors/>
       </main>
-    </SidebarProvider>
+    {/* </SidebarProvider> */}
     </>
   )
 }
