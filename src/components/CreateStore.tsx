@@ -111,7 +111,7 @@ export default function CreateStoreDialog() {
 
       // Append file
       if (files.length > 0) {
-        formData.append("storeImage", files[0]); 
+        formData.append("imageFile", files[0]); 
       }
 
       // Send to backend
